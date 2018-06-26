@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var port = 8040;
-const request = require('request');
+
 
 // route public pour charger avant les pages 
 app.use(express.static('public'));
@@ -12,22 +12,16 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 
+app.get('/', function(req, res) {
+    didier(res);
 
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function didier (res){
+    res.render('index',{
+        prenom:'didier', nom:'VILRUS'
+    })
+}
 
 
 
